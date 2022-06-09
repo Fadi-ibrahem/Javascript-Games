@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Tahoma, Arial;
+}
+
+.slider-container {
+  margin: 10px auto;
+  width: 800px;             /*el width we height 3ala ad el swar belzabt ana 3amlo kda momkn a8ayro 3adi*/
+  height: 250px;            /*el width we height 3ala ad el swar belzabt ana 3amlo kda momkn a8ayro 3adi*/
+  position: relative;
+}
+
+.slider-container img {
+  position:absolute;
+  opacity: 0;               /*3ashan a3le el sora msh zahra*/
+  transition: opacity 1s;
+  z-index: 1;
+}
+
+.slider-container img.active {
+  opacity:1;                /*lama tege sora ta5od el class "active" t2om zahra*/
+}
+
+.slider-container .slide-number {  /* da shakl el div el hayb2a feh rakm el slider el zaher */
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, .6);
+  color:#FFF;
+  padding: 5px 10px;
+  font-size: 20px;
+  z-index: 2;
+  border-radius: 6px;
+}
+
+.slider-controls { /* da el div el goah el zroaren wel indicators */
+  width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+  background-color: #009688;
+  color: #FFF;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  padding:5px;
+  user-select: none;        /* de el hya law ana 3awz a7dd kalam 3ashan a5do copy masln maynf3sh mosh hayt7dd m3aya */
+  width: 20%;
+}
+
+.slider-controls .prev {
+  float: left;
+}
+
+.slider-controls .next {
+  float: right;
+}
+
+.slider-controls .prev.disabled,
+.slider-controls .next.disabled {
+  background-color: rgba(0, 150, 136, .5);
+  cursor: no-drop;
+}
+
+.slider-controls .indicators {
+  width: 60%;
+  float:left;
+}
+
+.slider-controls .indicators ul {
+  list-style: none;
+  margin: 0;
+  text-align: center;
+}
+
+.slider-controls .indicators ul li {
+  display: inline-block;
+  background-color: #F6F6F6;
+  color: #333;
+  font-weight: bold;
+  height: 28px;
+  width: 28px;
+  border-radius: 4px;
+  margin: 0 2px;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.slider-controls .indicators ul li.active {
+  background-color: #009688;
+  color: #FFF;
+}
